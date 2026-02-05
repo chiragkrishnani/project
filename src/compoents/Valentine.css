@@ -1,0 +1,174 @@
+/* ---------- RESET ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ---------- CONTAINER ---------- */
+.valentine-container {
+  min-height: 100svh; /* mobile-safe viewport */
+  width: 100%;
+  background: radial-gradient(circle at top, #ffe3ec, #ffb3c6);
+  background-image: url('../assets/626918381_686786044424703_2357197643554829843_n.jpg');
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px;
+}
+
+/* ---------- CARD ---------- */
+.valentine-card {
+  width: 100%;
+  max-width: 380px;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 28px;
+
+  padding: 40px 26px;
+  text-align: center;
+
+  box-shadow: 0 20px 45px rgba(255, 77, 109, 0.35);
+  animation: popIn 0.7s ease;
+}
+
+/* ---------- QUESTION ---------- */
+.valentine-card h1 {
+  width: 100%;
+  margin: 0 0 32px;
+  font-size: 26px;
+  line-height: 1.35;
+  font-weight: 700;
+  color: #c9184a;
+
+  text-align: center;
+  text-wrap: balance;
+}
+
+/* ---------- BUTTON GROUP ---------- */
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ---------- BUTTON BASE ---------- */
+button {
+  min-width: 120px;
+  padding: 14px 30px;
+  font-size: 16px;
+  font-weight: 600;
+
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  user-select: none;
+}
+
+/* ---------- YES BUTTON ---------- */
+/* YES BUTTON GROW SMOOTH */
+.yes-btn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* NO BUTTON SMOOTH MOVE */
+.no-btn {
+  transition: transform 0.35s ease;
+}
+
+/* SHAKE ANIMATION */
+
+
+@keyframes shakeAnim {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
+
+
+/* ---------- NO BUTTON ---------- */
+.no-btn {
+  background: #ffffff;
+  color: #444;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+/* ---------- SUCCESS MESSAGE ---------- */
+.success-text {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ff4d6d;
+  animation: float 1.6s ease-in-out infinite;
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ---------- TABLET ---------- */
+@media (min-width: 600px) {
+  .valentine-card {
+    max-width: 420px;
+    padding: 48px 36px;
+  }
+
+  .valentine-card h1 {
+    font-size: 30px;
+  }
+
+  button {
+    font-size: 17px;
+    padding: 16px 34px;
+  }
+}
+
+/* ---------- LAPTOP / DESKTOP ---------- */
+@media (min-width: 1024px) {
+  .valentine-card {
+    max-width: 460px;
+    padding: 56px 42px;
+  }
+
+  .valentine-card h1 {
+    font-size: 34px;
+  }
+
+  .success-text {
+    font-size: 38px;
+  }
+}
